@@ -4,21 +4,21 @@ Resource  ../Resources/Keywords.robot
 *** Test Cases ***
 User input the text and check that text added
     Open And Load application
-    Input Text  123456789
+    Input Note  "123456789"
     Click Save
-    Check The Note  123456789
+    Check The Note  "123456789"
     Close Application
-Check the note saved
+Check that note saved
     Open and Load Application
-    Check The Note
+    Check The Note  "123456789"
     Close Application
 Check that note overwrote
     Open And Load Application
-    Input Text  little cat
+    Input Note  "little cat"
     Click Save
-    Check The Note  little cat
-    Input Text  little dog
+    Check The Note  "little cat"
+    Input Note  "little dog"
     Click Save
     Close Application
     Open And Load Application
-    Check The Note  little dog
+    Check The Note  "little dog"
