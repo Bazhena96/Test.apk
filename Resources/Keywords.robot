@@ -17,6 +17,19 @@ Click Save
 Check The Note
     [Arguments]  ${text}
     Wait Until Page Contains  ${text}
+Save Note
+    [Arguments]  ${note}
+    Input Note  ${note}
+    Click Save
+Check Note And Close
+    [Arguments]  ${note}
+    Check The Note  ${note}
+    Close Application
+Open And Save Note
+    [Arguments]  ${note}
+    Open And Load Application
+    Save Note  ${note}
+
 
 
 
