@@ -1,7 +1,7 @@
 *** Settings ***
 Library  AppiumLibrary
 *** Keywords ***
-Open Application
+Load Application
     Open Application  http://localhost:4723/wd/hub  platformName=Android  platformVersion=10.0  deviceName=Pixel 3  pkg=com.example.testapp
     Set Appium Timeout  5
 Wait And Click
