@@ -1,7 +1,7 @@
 *** Settings ***
 Library  AppiumLibrary
 *** Keywords ***
-Open And Load Application
+Open Application
     Open Application  http://localhost:4723/wd/hub  platformName=Android  platformVersion=10.0  deviceName=Pixel 3  pkg=com.example.testapp
     Set Appium Timeout  5
 Wait And Click
@@ -14,21 +14,15 @@ Input Note
     Input Text  id=com.example.testapp:id/etResult  ${text}
 Click Save
     Wait And Click  id=com.example.testapp:id/btnSave
-Check The Note
+Verify The Note Contain
     [Arguments]  ${text}
     Wait Until Page Contains  ${text}
-Save Note
+Save A New Note
     [Arguments]  ${note}
     Input Note  ${note}
     Click Save
-Check Note And Close
-    [Arguments]  ${note}
-    Check The Note  ${note}
-    Close Application
-Open And Save Note
-    [Arguments]  ${note}
-    Open And Load Application
-    Save Note  ${note}
+
+
 
 
 
